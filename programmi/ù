@@ -20,6 +20,7 @@ void chiamaEs14(){
         for(i=0;i<n;i++){
                 printf("valore A[%d]:  ",i);
                 scanf("%d",&A[i]);
+                printf("\n");
         }
 	// ------------------------------
 	stampaArray(A,n);
