@@ -2,12 +2,14 @@
 char verificaOrdinato(int A[],int n);
 void chiamaEs12();
 void chiamaEs14();
+void chiamaES16();
 void scambia(int A[],int n,int x,int y,int a, int b);
 void stampaArray(int A[],int n);
 
 void main(){
 	//chiamaEs12();
-	chiamaEs14();
+	//chiamaEs14();
+	chiamaES16();
 }
 
 void chiamaEs14(){
@@ -20,7 +22,6 @@ void chiamaEs14(){
         for(i=0;i<n;i++){
                 printf("valore A[%d]:  ",i);
                 scanf("%d",&A[i]);
-                printf("\n");
         }
 	// ------------------------------
 	stampaArray(A,n);
@@ -48,6 +49,7 @@ void stampaArray(int A[],int n){
         }
         printf("\n");
 }
+// --------------------------------------------------------------
 
 void chiamaEs12(){
 	int A[5];
@@ -80,3 +82,30 @@ char verificaOrdinato(int A[],int n){
 		return 'n';
 	}
 }
+
+// ------------------------------------------------------------
+
+void chiamaES16(){
+	int v[6]={10,12,20,5,84,9};
+	int *u[6];
+	
+	int min,i,j,*pmin;
+	min=v[0];
+	pmin = &v[0];
+	for(i=1;i<6;i++){
+		for(j=0;j<6;j++){
+			printf("u[i-1] - &v[j] : %p - %p\n",u[i-1],&v[j]);
+			if(v[i]<min && u[i-1]!=pmin){
+				min = v[i];
+				pmin=&v[i];
+			}
+		}
+		printf("minimo: %d\n",min);
+		u[i]=pmin;
+	}
+		
+}
+				
+
+
+
