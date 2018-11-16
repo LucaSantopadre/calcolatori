@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 char verificaOrdinato(int A[],int n);
 void chiamaEs12();
 void chiamaEs14();
@@ -7,13 +8,16 @@ void chiamaEs18();
 void scambia(int A[],int n,int x,int y,int a, int b);
 void stampaArray(int A[],int n);
 void chiamaEs20();
+void chiamaEs24();
+void verificaDetPos(int **A,int i,int j);
 
 void main(){
 	//chiamaEs12();
 	//chiamaEs14();
 	//chiamaES16();
 	//chiamaEs18();
-	chiamaEs20();
+	//chiamaEs20();
+	chiamaEs24();
 }
 
 void chiamaEs14(){
@@ -212,4 +216,39 @@ void chiamaEs20(){
 	}
 
 }
+// --------------------------------------------------------
+
+void chiamaEs24(){
+	int **A[4][3]={{1,2,3},{4,5,6},{7,8,9},{10,11,12}};
+	int i,j,M,N;
+	M=4;
+	N=3;
+
+	printf("MATRICE: \n");
+	for(i=0;i<M;i++){
+		for(j=0;j<N;j++){
+			printf("%d ",A[i][j]);
+		}
+		printf("\n");
+	}
+	for(i=0;i<M-1;i++){
+		for(j=0;j<N-1;j++){
+			verificaDetPos(A,i,j);
+		}
+	}
+}
+
+void verificaDetPos(int **A,int i,int j){
+	int a,b,c,d;
+	a=A[i][j];
+	b=A[i][j+1];
+	c=A[i+1][j];
+	d=A[i+1][j+1];
+
+	printf("%d %d \n %d %d",a,b,c,d);
+
+
+}
+
+
 
