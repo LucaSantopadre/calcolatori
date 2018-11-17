@@ -9,7 +9,10 @@ void scambia(int A[],int n,int x,int y,int a, int b);
 void stampaArray(int A[],int n);
 void chiamaEs20();
 void chiamaEs24();
-void verificaDetPos(int **A,int i,int j);
+void verificaDetPos(int (*arr)[] ,int i,int j);
+
+#define ROWS 4
+#define COLS 3
 
 void main(){
 	//chiamaEs12();
@@ -219,11 +222,19 @@ void chiamaEs20(){
 // --------------------------------------------------------
 
 void chiamaEs24(){
-	int **A[4][3]={{1,2,3},{4,5,6},{7,8,9},{10,11,12}};
+	int A[ROWS][COLS]=
+	{
+		{1,2,3},
+		{1,5,6},
+		{7,8,9},
+		{0,1,0}
+	};
+
 	int i,j,M,N;
 	M=4;
 	N=3;
 
+	// stampa matrice
 	printf("MATRICE: \n");
 	for(i=0;i<M;i++){
 		for(j=0;j<N;j++){
@@ -231,6 +242,7 @@ void chiamaEs24(){
 		}
 		printf("\n");
 	}
+	// chiama funzione verifica determinante
 	for(i=0;i<M-1;i++){
 		for(j=0;j<N-1;j++){
 			verificaDetPos(A,i,j);
@@ -238,17 +250,16 @@ void chiamaEs24(){
 	}
 }
 
-void verificaDetPos(int **A,int i,int j){
+void verificaDetPos(int (*arr)[COLS],int i,int j){
 	int a,b,c,d;
-	a=A[i][j];
-	b=A[i][j+1];
-	c=A[i+1][j];
-	d=A[i+1][j+1];
+	a=arr[i][j];
+	b=arr[i][j+1];
+	c=arr[i+1][j];
+	d=arr[i+1][j+1];
 
-	printf("%d %d \n %d %d",a,b,c,d);
-
-
+	// controllo determinante
+	if(a*d-b*c > 0){
+		printf("MATRICE DETERMINANTE POSITIVO!\n");
+		printf("%d  %d\n%d  %d\n",a,b,c,d);
+	}
 }
-
-
-
