@@ -16,7 +16,7 @@ main:
 	add $a0, $v0, 0 	# a0 = n
 	jal fatt
 	
-	add $a2, $v0, 0	# risultato in a2
+	add $a2, $v0, 0		# risultato in a2
 	
 	add $v0, $0, 4		# codice print_string
 	la $a0, str_out
