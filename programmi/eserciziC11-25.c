@@ -9,6 +9,7 @@ void scambia(int A[],int n,int x,int y,int a, int b);
 void stampaArray(int A[],int n);
 void chiamaEs20();
 void chiamaEs24();
+void chiamaEs21();
 void verificaDetPos(int (*arr)[] ,int i,int j);
 
 #define ROWS 4
@@ -20,7 +21,8 @@ void main(){
 	//chiamaES16();
 	//chiamaEs18();
 	//chiamaEs20();
-	chiamaEs24();
+	//chiamaEs24();
+	chiamaEs21();
 }
 
 void chiamaEs14(){
@@ -262,4 +264,20 @@ void verificaDetPos(int (*arr)[COLS],int i,int j){
 		printf("MATRICE DETERMINANTE POSITIVO!\n");
 		printf("%d  %d\n%d  %d\n",a,b,c,d);
 	}
+}
+
+// ---------------------------------------------------------
+
+
+void chiamaEs21(){
+	int A[3][3] = {
+		{-1,3,7},
+		{2,-4,3},
+		{2,4,8}
+	}
+	int B[2][2] = {
+		{3,7},
+		{-4,3}
+	}
+
 }
