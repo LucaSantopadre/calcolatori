@@ -4,6 +4,20 @@
 int lunghezza(char *s);
 
 int main(){
+	char *s=malloc(20*sizeof(char));
+       	s="prova";	
+	//s[0]='X';
+	//strcat(s,"ciao");
+	//
+	char b = getchar();
+	int l;
+	l=strlen(s);
+	//l=sizeof(s)/sizeof(char);
+
+	printf("STRINGA: %s\nLUNGHEZZA:%d\n",s,l);
+	printf("---------------------\n\n\n");
+
+	//--------------------------
 
 	char *p="popopopopopo";
 	int n = sizeof(p);

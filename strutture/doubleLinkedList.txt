@@ -1,0 +1,52 @@
+/*
+ * struct node {
+ *	int value;
+ *	struct nodo *next;
+ *	struct nodo *prev;
+ * }
+ *
+ *
+ * struct node *inser_after(stuct node **head_ptr, struct node *node, int val)
+ * {
+ *	// alloco memoria nuovo nodo
+ *	struct node *new_node = malloc(sizeof(struct node));
+ *
+ *	new_node->value = val
+ *	
+ *	// 2 casi    SEMPRE 4 puntatori da aggiornare
+ *	if node == NULL     inserisce in test
+ *		new_node->next = *ptr_head  //!!!! ho l'indirizzo del puntatore a head
+ *					    // devo dereferenziarlo
+ *		new_node->prev = NULL
+ *
+ *		// devo aggiornare il puntatore a head
+ *		if(*head_ptr != NULL)    controllo che la lista non sia vuota
+ *			(*head_ptr)->prev = new_node
+ *
+ *		// aggiorno head
+ *		*head_ptr = new_node
+ *
+ *	else 
+ *		new_node->next = node->next
+ *
+ *		if node->next != NULL
+ *			node->next->prev = new_node
+ *
+ *		node->next = new_node
+ *
+ *		new_node->prev = node
+ *
+ *	return new_node
+ * }
+ *
+ *
+ * // TODO funzione elimina nodo
+ * // esercizio 31  squadre!!!
+ *
+ * int main(){
+ *	struct node *head = NULL;
+ *	
+ *	struct node *n5 = insert_after(&head, NULL, 5)  // inserisci in testa 5
+ *	insert_after(&head, NULL, 7)	// inserisci in testa 7
+ *	insert_after(&head, n5, 0)   /// inserisci dopo il nodo n5
+ * }
